@@ -1,7 +1,0 @@
-C:\Users\tulio\Desktop\Entrevista\exercicio_2\exercicio_2\bin\Debug\exercicio_2.exe.config
-C:\Users\tulio\Desktop\Entrevista\exercicio_2\exercicio_2\bin\Debug\exercicio_2.exe
-C:\Users\tulio\Desktop\Entrevista\exercicio_2\exercicio_2\bin\Debug\exercicio_2.pdb
-C:\Users\tulio\Desktop\Entrevista\exercicio_2\exercicio_2\obj\Debug\exercicio_2.csprojAssemblyReference.cache
-C:\Users\tulio\Desktop\Entrevista\exercicio_2\exercicio_2\obj\Debug\exercicio_2.csproj.CoreCompileInputs.cache
-C:\Users\tulio\Desktop\Entrevista\exercicio_2\exercicio_2\obj\Debug\exercicio_2.exe
-C:\Users\tulio\Desktop\Entrevista\exercicio_2\exercicio_2\obj\Debug\exercicio_2.pdb
