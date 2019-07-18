@@ -1,0 +1,7 @@
+C:\Users\tulio\Desktop\Entrevista\exercicio_4\exercicio_4\bin\Debug\exercicio_4.exe.config
+C:\Users\tulio\Desktop\Entrevista\exercicio_4\exercicio_4\bin\Debug\exercicio_4.exe
+C:\Users\tulio\Desktop\Entrevista\exercicio_4\exercicio_4\bin\Debug\exercicio_4.pdb
+C:\Users\tulio\Desktop\Entrevista\exercicio_4\exercicio_4\obj\Debug\exercicio_4.csprojAssemblyReference.cache
+C:\Users\tulio\Desktop\Entrevista\exercicio_4\exercicio_4\obj\Debug\exercicio_4.csproj.CoreCompileInputs.cache
+C:\Users\tulio\Desktop\Entrevista\exercicio_4\exercicio_4\obj\Debug\exercicio_4.exe
+C:\Users\tulio\Desktop\Entrevista\exercicio_4\exercicio_4\obj\Debug\exercicio_4.pdb
