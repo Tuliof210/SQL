@@ -64,7 +64,7 @@ INNER JOIN TELEFONE
 ON CLIENTE.IDCLIENTE = TELEFONE.ID_CLIENTE;
 
 /*EH POSSIVEL CRIAR APELIDOS PARA FACILITAR*/
-SELECT C.NOME, C.SEXO, E.BAIRRO, E.CIDADE, T.NUMERO
+SELECT C.NOME, C.SEXO, E.BAIRRO, E.CIDADE, T.NUMERO, T.TIPO	
 FROM CLIENTE C
 INNER JOIN ENDERECO E
 ON C.IDCLIENTE = E.ID_CLIENTE
@@ -72,3 +72,83 @@ INNER JOIN TELEFONE T
 ON C.IDCLIENTE = T.ID_CLIENTE
 ORDER BY E.BAIRRO;
 /*ORDENAÇAO POR PARAMETRO*/
+/*
++---------+------+----------+----------------+---------+------+
+| NOME    | SEXO | BAIRRO   | CIDADE         | NUMERO  | TIPO |
++---------+------+----------+----------------+---------+------+
+| JOAO    | M    | CENTRO   | RIO DE JANEIRO | 6765768 | COM  |
+| CELIA   | F    | CENTRO   | NITERÓI        | 5676765 | RES  |
+| CELIA   | F    | CENTRO   | NITERÓI        | 5754644 | RES  |
+| ANTONIO | M    | FLAMENGO | RIO DE JANEIRO | 7555446 | RES  |
+| ANA     | F    | JARDINS  | SAO PAULO      | 6574565 | COM  |
++---------+------+----------+----------------+---------+------+
+*/
+
+--TESTE
+
+
+SELECT C.NOME, C.EMAIL, T.NUMERO
+FROM CLIENTE C
+INNER JOIN TELEFONE T
+ON C.IDCLIENTE = T.ID_CLIENTE
+INNER JOIN ENDERECO E 
+ON C.IDCLIENTE = E.ID_CLIENTE
+WHERE T.TIPO = 'COM' AND E.ESTADO = 'RJ';
+
+
+SELECT C.NOME, C.EMAIL, T.NUMERO
+FROM CLIENTE C
+INNER JOIN TELEFONE T ON C.IDCLIENTE = T.ID_CLIENTE
+INNER JOIN ENDERECO E ON C.IDCLIENTE = E.ID_CLIENTE
+WHERE T.TIPO = 'CELL' AND C.SEXO = 'F' AND E.ESTADO = 'SP';
+
+
+/*USANDO IFNULL*/
+SELECT NOME, EMAIL, SEXO FROM CLIENTE; --ERRADO
+/*
++---------+-----------------+------+
+| NOME    | EMAIL           | SEXO |
++---------+-----------------+------+
+| JOAO    | JOAO@IG.COM     | M    |
+| CARLOS  | CARLOS@TERA.COM | M    |
+| ANA     | ANA@GLOBO.COM   | F    |
+| JORGE   | JORGE@IG.COM    | M    |
+| CLARA   | NULL            | M    |
+| CELIA   | JOAO@TERRA.COM  | F    |
+| ANTONIO | NULL            | M    |
+| JOAO    | NULL            | M    |
++---------+-----------------+------+ */
+
+
+
+SELECT NOME, IFNULL(EMAIL, 'SEM EMAIL'), SEXO FROM CLIENTE; --"CERTO"
+/*
++---------+----------------------------+------+
+| NOME    | IFNULL(EMAIL, 'SEM EMAIL') | SEXO |
++---------+----------------------------+------+
+| JOAO    | JOAO@IG.COM                | M    |
+| CARLOS  | CARLOS@TERA.COM            | M    |
+| ANA     | ANA@GLOBO.COM              | F    |
+| JORGE   | JORGE@IG.COM               | M    |
+| CLARA   | SEM EMAIL                  | M    |
+| CELIA   | JOAO@TERRA.COM             | F    |
+| ANTONIO | SEM EMAIL                  | M    |
+| JOAO    | SEM EMAIL                  | M    |
++---------+----------------------------+------+ */
+
+
+
+SELECT NOME, IFNULL(EMAIL, 'SEM EMAIL') AS EMAIL, SEXO FROM CLIENTE;
+/*
++---------+-----------------+------+
+| NOME    | EMAIL           | SEXO |
++---------+-----------------+------+
+| JOAO    | JOAO@IG.COM     | M    |
+| CARLOS  | CARLOS@TERA.COM | M    |
+| ANA     | ANA@GLOBO.COM   | F    |
+| JORGE   | JORGE@IG.COM    | M    |
+| CLARA   | SEM EMAIL       | M    |
+| CELIA   | JOAO@TERRA.COM  | F    |
+| ANTONIO | SEM EMAIL       | M    |
+| JOAO    | SEM EMAIL       | M    |
++---------+-----------------+------+ */
